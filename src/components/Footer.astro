@@ -1,0 +1,34 @@
+---
+import { Picture } from 'astro:assets'
+import heroLogo from '/src/assets/Rintima_Logo_Transparency_3_No_Text.png'
+---
+
+<footer>
+<span> RINTIMA </span>
+
+  <a href="/" aria-label="Header Logo Image">
+    <Picture
+      src={heroLogo}
+      formats={['avif', 'webp']}
+      alt="Logo"
+      height="350"
+    />
+  </a>
+
+  <span>LINGERIE</span>
+</footer>
+
+<style>
+
+    footer {
+        display: flex;
+        position: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    span {
+        margin-bottom: 30px;
+    }
+
+</style>
