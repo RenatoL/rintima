@@ -1,34 +1,56 @@
 ---
 import { Picture } from 'astro:assets'
 import heroLogo from '/src/assets/Rintima_Logo_Transparency_3_No_Text.png'
+import longLogo from '/src/assets/Long_Logo.png'
+
+
 ---
 
 <header>
-<span> RINTIMA </span>
+<span>RINTIMA</span>
 
-  <a href="/" aria-label="Header Logo Image">
-    <Picture
-      src={heroLogo}
-      formats={['avif', 'webp']}
-      alt="Logo"
-      height={350}
-    />
-  </a>
+
+    <div class="image-container">
+      <Picture class="header-image"
+        src={heroLogo}
+        formats={['avif', 'webp']}
+        alt="Logo"
+      />
+    </div>
 
   <span>LINGERIE</span>
 </header>
 
 <style>
 
+  @media only screen and (max-width: 767px) {
+    header {
+      flex-wrap: wrap;
+    }
+  }
     header {
         display: flex;
-        position: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
     }
 
     span {
         margin-bottom: 30px;
+        font-family: 'Trirong';
+        font-size: 2.5rem;
+        padding: 1rem;
     }
+
+    .image-container {
+      width: 100%
+    }
+
+    .header-image{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+     }
+
+
 
 </style>
