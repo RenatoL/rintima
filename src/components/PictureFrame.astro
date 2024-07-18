@@ -11,12 +11,14 @@ interface Props {
 
 const { imagePath, altText, class: className, ...rest } = Astro.props;
 
+const imgFormats = import.meta.env.IMG_FORMATS
+
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/frames/*.{jpeg,jpg,png,gif,avif,webp}');
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/frames/*.{jpeg,jpg,png,gif,avif,webp}"`);
 ---
 
     <Picture class={className} {...rest}
       src={images[imagePath]()}
-      formats={['avif', 'webp']}
+      formats={[imgFormats]}
       alt={altText}
     />
