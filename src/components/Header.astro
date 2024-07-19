@@ -13,7 +13,7 @@ const imgFormats = import.meta.env.IMG_FORMATS
     <Picture
       class="header-image"
       src={logo}
-      formats={["avif", "webp"]}
+      formats={[imgFormats]}
       alt="Logo"
     />
   </div>
@@ -22,11 +22,7 @@ const imgFormats = import.meta.env.IMG_FORMATS
 </header>
 
 <style>
-  @media only screen and (max-width: 767px) {
-    header {
-      flex-wrap: wrap;
-    }
-  }
+
   header {
     display: flex;
     justify-content: space-evenly;
@@ -49,4 +45,11 @@ const imgFormats = import.meta.env.IMG_FORMATS
     height: auto;
     object-fit: cover;
   }
+
+  @media only screen and (max-width: 640px) {
+    header {
+      flex-wrap: wrap;
+    }
+  }
+  
 </style>
