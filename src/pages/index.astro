@@ -11,30 +11,33 @@ import Frame from '../components/PictureFrame.astro';
 		
 		<div class="grid">
 
-			<div class="div1">
-          <Frame class="frame-window" imagePath='/src/assets/frames/bodouir-female-1.jpg' altText='Framed picture' />
-          <Frame class="frame-square" imagePath='/src/assets/frames/beach-female-1.jpg' altText='Framed picture' />
-      </div>
 
-			<div class="div2">
+			<div class="first-card">
 				<Card
 					title="Who are we?"
 					body="A Lingerie, Swimwear, Beachwear and Underwear boutique with over 26 years of experience"
 				/>
 			</div>
-			<div class="div3">
+
+			<div class="first-frames flex-frames">
+          <Frame class="frame-box-border frame-window frame-x-overlap-right" imagePath='/src/assets/frames/bodouir-female-1.jpg' altText='Framed picture' />
+          <Frame class="frame-box-border frame-square frame-x-overlap-left " imagePath='/src/assets/frames/beach-female-1.jpg' altText='Framed picture' />
+      </div>
+
+			<div class="second-card">
 				<Card
 					title="What we do."
 					body="We assist you in selecting garments that fit you, your style, your comfort"
 				/>
 			</div>
-			<div class="div4">
-				<Frame class="frame-window-reversed" imagePath='/src/assets/frames/beach-female-2.jpg' altText='Framed picture' />
 
-				<Frame class="frame-oval" imagePath='/src/assets/frames/beach-male-1.jpg' altText='Framed picture' />
+			<div class="second-frames flex-frames">
+        <Frame class="frame-box-border frame-oval frame-x-overlap-right " imagePath='/src/assets/frames/beach-male-1.jpg' altText='Framed picture' />
+				<Frame class="frame-box-border frame-window-reversed frame-x-overlap-left" imagePath='/src/assets/frames/beach-female-2.jpg' altText='Framed picture' />
+				
 			</div>
 
-			<div class="div6">
+			<div class="third-card">
 				<Card
 					title="Our brands."
 					body="Premium, hand selected collections, to empower you, bolden you, functional or just cosy"
@@ -49,94 +52,93 @@ import Frame from '../components/PictureFrame.astro';
 
 <style>
 	.grid {
-display: inline-grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-template-rows: repeat(3, 1fr);
-grid-column-gap: 2rem;
-grid-row-gap: 2rem;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-.div1 { grid-area: 1 / 1 / 2 / 2; 
-		position: relative;
+.first-frames { 
+  /* grid-area: 1 / 1 / 2 / 2;  */
     display: flex;
     align-items: center;
 	}
-.div2 { grid-area: 1 / 2 / 2 / 4; 
+.first-card { 
+  /* grid-area: 1 / 2 / 2 / 4;  */
 
 	display: flex;
   justify-content: left;
   align-items: center;
 }
-.div3 { grid-area: 2 / 1 / 3 / 3; 
+.second-card { 
+  /* grid-area: 2 / 1 / 3 / 3;  */
 
 	display: flex;
   justify-content: right;
   align-items: center;}
-.div4 { grid-area: 2 / 3 / 3 / 3; 
-		position: relative;
+.second-frames { 
+  /* grid-area: 2 / 3 / 3 / 3;  */
 
 	display: flex;
   justify-content: center;
   align-items: center;
 	}
-.div5 { grid-area: 3 / 1 / 4 / 2; }
-.div6 { grid-area: 3 / 2 / 4 / 4; 
+.third-frames { 
+  
+  /* grid-area: 3 / 1 / 4 / 2;  */
+}
+.third-card { 
+  
+  /* grid-area: 3 / 2 / 4 / 4;  */
 
 	display: flex;
   justify-content: left;
   align-items: center;
 }
 
-.flex-frame {
-  display: flex;
-  align-content: center;
+.frame-x-overlap-left {
+  transform: translateX(-15%);
+  transform: translateY(-15%);
+}
+
+.frame-x-overlap-right {
+  transform: translateX(15%);
+}
+
+.frame-box-border {    
+  width: 150px;
+  height: 200px;
+  box-sizing: content-box;
+  object-fit: fill;
+  /* border: 1px solid #000; */
+  box-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 .frame-window {
-    box-sizing: content-box;
-    object-fit: fill;
-  width: 150px;
-  height: 300px;
+
   border-radius: var(--frameWindowRadius);
-  box-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
 .frame-square {
-    box-sizing: content-box;
-    object-fit: fill;
-  width: 200px;
-  height: 200px;
-  
   position: relative;
-  left: -50px;
   z-index: -1;
-  border-width: 2px;
   border-radius: 25% 25% 25% 25%;
-  box-shadow: 3px 3px 10px rgb(0, 0, 0);
 }
 
 .frame-oval {
-    box-sizing: content-box;
-    object-fit: fill;
-  width: 200px;
-  height: 200px;
   position: relative;
-  right: 50px;
   z-index: -1;
-  border-width: 2px;
   border-radius: 100% 100% 100% 100%;
-  box-shadow: 3px 3px 10px rgb(0, 0, 0);
 }
 
 
 .frame-window-reversed {
-    box-sizing: content-box;
-    object-fit: fill;
 	width: 150px;
-	height: 300px;
+	height: 200px;
   border-radius: var(--frameWindowRadiusReversed);
-  box-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
 	.hr-line {
@@ -148,5 +150,23 @@ grid-row-gap: 2rem;
   --un-border-opacity: 1 !important;
   border-color: rgb(0 0 0 / var(--un-border-opacity)) !important;
   border-style: solid;
+}
+
+@media only screen and (max-width: 640px) {
+  .grid {
+    
+    display: grid;
+    grid-template-rows: repeat(6, 0.5fr);
+    grid-template-columns: none;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+  }
+
+
+  .flex-frames {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
 }
 </style>
