@@ -8,89 +8,72 @@ const imgFormats = import.meta.env.IMG_FORMATS
 
 <footer>
 <div class="grid">
-    <div class="div1">
-      <div class="image-container">
-        <a href="/" aria-label="Logo Image">
-          <Picture class="footer-image"
-            src={heroLogo}
-            formats={[imgFormats]}
-            alt="Logo"
-          />
-        </a>
-      </div>
-    </div>
-  <div class="div2">
+
+  <div class="address-area">
       <div class="text-wrapper">
         <h3>Address</h3>
-        <p>Rua José Relvas 71C</p>
+        <p>Rua José Relvas</p>
+        <p>71C</p>
         <p>Parede</p>
       </div>
   </div>
-  <div class="text-wrapper">
-    <div  class="div3"> 
-      <h3>Working Hours</h3>
-  </div>
-  <div class="div4">
-    <h4>Monday - Friday</h4>
-      <p>9h - 13h30</p>
-      <p>15h - 19h</p>
+  <div class="hours-area">
+    <div class="text-wrapper">
+        <h3>Working Hours</h3>
+        <h4>Mon - Fri</h4>
+        <p>9h - 13h30</p>
+        <p>15h - 19h</p>
+        <h4>Saturday</h4>
+        <p>9h - 13h30</p>
     </div>
-    <div class="div5">
-      <h4>Saturday</h4>
-      <p>9h - 13h30</p>
+  </div>
+
+  <div class="logo-area">
+    <div class="image-container">
+      <a href="/" aria-label="Logo Image">
+        <Picture class="footer-image"
+          src={heroLogo}
+          formats={[imgFormats]}
+          alt="Logo"
+        />
+      </a>
     </div>
   </div>
 </div>
 </footer>
 
 <style>
-@media only screen and (max-width: 767px) {
-    header {
-      flex-wrap: wrap;
-    }
-  }
-
   .grid {
-display: grid;
-grid-template-columns: 1fr repeat(2, 1fr);
-grid-template-rows: repeat(3, auto);
-grid-column-gap: 2rem;
-grid-row-gap: 2rem;
-
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "logo-area", "address-area", "hours-area";
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
 }
 
-.div1 { grid-area: 1 / 1 / 4 / 2; 
+.logo-area { 
     display: flex;
     align-items: center;
   }
-.div2 { grid-area: 1 / 2 / 2 / 3; 
+/* .address-area { grid-area: 1 / 2 / 1 / 3;  }
+.hours-area { grid-area: 1 / 3 / 1 / 4;   } */
+
+  .address-area, .hours-area {
+  
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column; 
   }
-.div3 { grid-area: 1 / 3 / 2 / 4; 
 
-  display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; }
-.div4 { grid-area: 2 / 3 / 3 / 4; 
+  .address-area {
+  
+    text-align: left;
+  }
 
-  display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  line-height: 0%; 
-}
-.div5 { grid-area: 3 / 3 / 4 / 4; 
-
-  display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    line-height: 0%;
-   }
+  .hours-area {
+    text-align: center;
+  }
 
     footer {
         display: flex;
@@ -100,9 +83,7 @@ grid-row-gap: 2rem;
     }
 
     .text-wrapper {
-        /* margin-bottom: 30px; */
         font-family: 'Jacques Francois';
-        text-align: left;
     }
 
     .image-container {
@@ -113,5 +94,19 @@ grid-row-gap: 2rem;
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+
+  @media only screen and (max-width: 768px)
+  {
+    h3 {
+      flex-wrap: nowrap;
+    }  
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "address-area hours-area", "logo-area";
+    }
+    .logo-area {
+      grid-area: 2 / 1 / 2 / 3;
+    }
   }
 </style>
