@@ -38,5 +38,12 @@ const {  title, body } = Astro.props;
 		font-size: 0.75rem;
 		margin-top: 0.5rem;
 		margin-bottom: 0;
+		font-family:  sans-serif;
+	}
+
+	@media only screen and (max-width: 640px) {
+		.card{
+			max-width: 20ch;
+		}
 	}
 </style>
