@@ -7,7 +7,7 @@ const imgFormats = import.meta.env.IMG_FORMATS
 ---
 
 <header>
-  <span>RINTIMA</span>
+  <span class="shimmer">RINTIMA</span>
 
   <div class="image-container">
     <Picture
@@ -18,7 +18,7 @@ const imgFormats = import.meta.env.IMG_FORMATS
     />
   </div>
 
-  <span>LINGERIE</span>
+  <span class="shimmer">LINGERIE</span>
 </header>
 
 <style>
@@ -45,6 +45,70 @@ const imgFormats = import.meta.env.IMG_FORMATS
     height: auto;
     object-fit: cover;
   }
+
+  .shimmer {
+		text-align: center;
+		color: rgba(255, 255, 255, 0);
+		background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		-webkit-background-size: 20px 100%;
+		-moz-background-size: 20px 100%;
+		background-size: 20px 100%;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		background-clip: text;
+		-webkit-animation-name: shimmer;
+		-moz-animation-name: shimmer;
+		animation-name: shimmer;
+		-webkit-animation-duration: 4s;
+		-moz-animation-duration: 4s;
+		animation-duration: 4s;
+		-webkit-animation-iteration-count: infinite;
+		-moz-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-color: #222;
+}
+
+@-moz-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@-webkit-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@-o-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+  }
+
+  
 
   @media only screen and (max-width: 640px) {
     header {
