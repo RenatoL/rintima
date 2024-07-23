@@ -1,4 +1,5 @@
 ---
+import CreatedBy from '../components/CreatedBy.astro'
 import { Picture } from 'astro:assets'
 import heroLogo from '/src/assets/Rintima_Logo_Transparency_3_No_Text.png'
 
@@ -74,6 +75,11 @@ const imgFormats = import.meta.env.IMG_FORMATS
       © 2024 Rintima Lda. All rights reserved
     </span>
   </div>
+<div class="sign-area info-text">
+  
+    <CreatedBy />
+</div>
+  
 </div>
 </footer>
 
@@ -81,7 +87,7 @@ const imgFormats = import.meta.env.IMG_FORMATS
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "address-area", "hours-area", "contact-area", "logo-area", "rights-area";
+    grid-template-areas: "address-area", "hours-area", "contact-area", "logo-area", "rights-area", "sign-area";
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
 }
@@ -91,7 +97,7 @@ const imgFormats = import.meta.env.IMG_FORMATS
     align-items: center;
   }
 
-  .address-area, .hours-area, .contact-area, .rights-area, .logo-area {
+  .address-area, .hours-area, .contact-area, .rights-area, .logo-area, .sign-area {
   
     display: flex;
     align-items: center;
@@ -110,6 +116,10 @@ const imgFormats = import.meta.env.IMG_FORMATS
 
   .contact-area {
     text-align: left;
+  }
+
+  .sign-area{
+    grid-area: 2 / 4 / 2 / 4;
   }
 
     footer {
@@ -159,5 +169,8 @@ const imgFormats = import.meta.env.IMG_FORMATS
       grid-area: 4 / 1 / 4 / 3;
       text-align: center;
     }
+  .sign-area{
+    grid-area: 5 / 1 / 5 / 3;
+  }
   }
 </style>
