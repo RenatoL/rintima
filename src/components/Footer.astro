@@ -72,16 +72,22 @@ const imgFormats = import.meta.env.IMG_FORMATS
   
   <div class="rights-area info-text">
     <span>
-      © 2024 Rintima Lda. All rights reserved
+      © <span id="year"></span> Rintima Lda. All rights reserved
     </span>
   </div>
-<div class="sign-area info-text">
-  
-    <CreatedBy />
-</div>
+
+  <div class="sign-area info-text">
+      <CreatedBy />
+  </div>
   
 </div>
 </footer>
+
+<script is:inline>
+
+document.getElementById("year").innerHTML = new Date().getFullYear();
+
+</script>
 
 <style>
   .grid {
