@@ -1,5 +1,7 @@
 # Rintima Website - Landing Page
 
+© 2024 Rintima Lda. All rights reserved
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f8b264a5-ee8b-4357-aeb4-fafbefeaf05e/deploy-status)](https://app.netlify.com/sites/rintima/deploys)
 
 ## Project Structure
@@ -19,3 +21,6 @@
 │       └── index.astro
 └── package.json
 ```
+
+
+
