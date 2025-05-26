@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import paraglide from "@inlang/paraglide-astro"
+import { paraglideVitePlugin } from "@inlang/paraglide-js"
 import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
@@ -13,13 +13,14 @@ export default defineConfig({
     }
 },
 
-integrations: [
-    paraglide({
-        // recommended settings
-        project: "./project.inlang",
-        outdir: "./src/paraglide", //where your files should be
-    }),
-],
+vite: {
+  		plugins: [
+  			paraglideVitePlugin({
+  				project: "./project.inlang",
+  				outdir: "./src/paraglide",
+  			}),
+  		],
+    },
 
 output: 'server',
 adapter: vercel({
