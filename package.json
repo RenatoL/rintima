@@ -10,7 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.11.5"
+    "@astrojs/vercel": "^8.1.4",
+    "astro": "^5.8.0"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
