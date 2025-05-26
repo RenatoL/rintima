@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
 import Frame from '../../components/PictureFrame.astro';
+import * as m from '../../../paraglide/messages.js';
 
 import { localizePathname } from '../../utils/linking.ts';
 
@@ -15,7 +16,7 @@ export function getStaticPaths () {
 export const prerender = true;
 ---
 
-<Layout title="Rintima Lingerie">
+<Layout title={m.layoutTitle()}>
 	<hr class="hr-line" style='width:80%;'>
 	<hr class="hr-line" style='width:60%;'>
 	<hr class="hr-line" style='width:40%;'>
@@ -25,33 +26,33 @@ export const prerender = true;
 
 			<div class="first-card flex">
 				<Card
-					title="Who are we?"
-					body="Rintima is a Lingerie, Swimwear, Beachwear and Underwear boutique with over 26 years of experience"
+					title={m.card1Title()}
+					body={m.card1Body()}
 				/>
 			</div>
 
 			<div class="first-frames flex">
-          <Frame class="frame-box-border frame-window frame-x-overlap-right" imagePath='/src/assets/frames/bodouir-female-1.jpg' altText='Framed picture' />
-          <Frame class="frame-box-border frame-square frame-x-overlap-left " imagePath='/src/assets/frames/beach-female-1.jpg' altText='Framed picture' />
+          <Frame class="frame-box-border frame-window frame-x-overlap-right" imagePath='/src/assets/frames/bodouir-female-1.jpg' altText={m.frameAltText()} />
+          <Frame class="frame-box-border frame-square frame-x-overlap-left " imagePath='/src/assets/frames/beach-female-1.jpg' altText={m.frameAltText()} />
       </div>
 
 			<div class="second-card flex">
 				<Card
-					title="What we do."
-					body="We assist you in selecting garments that fit you, your style, your comfort"
+					title={m.card2Title()}
+					body={m.card2Body()}
 				/>
 			</div>
 
 			<div class="second-frames flex">
-        <Frame class="frame-box-border frame-oval frame-x-overlap-right " imagePath='/src/assets/frames/beach-male-1.jpg' altText='Framed picture' />
-				<Frame class="frame-box-border frame-window-reversed frame-x-overlap-left" imagePath='/src/assets/frames/beach-female-2.jpg' altText='Framed picture' />
+        <Frame class="frame-box-border frame-oval frame-x-overlap-right " imagePath='/src/assets/frames/beach-male-1.jpg' altText={m.frameAltText()} />
+				<Frame class="frame-box-border frame-window-reversed frame-x-overlap-left" imagePath='/src/assets/frames/beach-female-2.jpg' altText={m.frameAltText()} />
 				
 			</div>
 
 			<div class="third-card flex">
 				<Card
-					title="Our brands."
-					body="Premium, hand selected collections, to empower you, bolden you, functional or just cosy"
+					title={m.card3Title()}
+					body={m.card3Body()}
 				/>
 			</div>
 
@@ -237,8 +238,8 @@ export const prerender = true;
 	<hr class="hr-line" style='width:40%;'>
 	<hr class="hr-line" style='width:60%;'>
 	<hr class="hr-line" style='width:80%;'>
-  <span class="flex">EST. 1998</span>
-  <span class="flex socials">Follow us on
+  <span class="flex">{m.est1998()}</span>
+  <span class="flex socials">{m.followUsOn()}
 
     <a href="https://www.facebook.com/RintimaLingerie">
       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 128 128">
@@ -248,7 +249,7 @@ export const prerender = true;
     </a>
   </span>
   
-  <span class="flex socials">To see our latest collections, sales, or contact us!</span>
+  <span class="flex socials">{m.latestCollectionsSalesContact()}</span>
     
 </Layout>
 

@@ -1,4 +1,14 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
-    "example_message": "Guten Tag {username}"
+    "layoutTitle": "Rintima Lingerie",
+    "card1Title": "Who are we?",
+    "card1Body": "Rintima is a Lingerie, Swimwear, Beachwear and Underwear boutique with over 26 years of experience",
+    "frameAltText": "Framed picture",
+    "card2Title": "What we do.",
+    "card2Body": "We assist you in selecting garments that fit you, your style, your comfort",
+    "card3Title": "Our brands.",
+    "card3Body": "Premium, hand selected collections, to empower you, bolden you, functional or just cosy",
+    "est1998": "EST. 1998",
+    "followUsOn": "Follow us on",
+    "latestCollectionsSalesContact": "To see our latest collections, sales, or contact us!"
   }
